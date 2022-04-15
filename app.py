@@ -8,7 +8,7 @@ import datab
 app = Flask(__name__)
 modules.nav.init_app(app)
 
-# app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db/warriors.sqlite3'
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db/warriors.sqlite3'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://srzcpwgrdpducd:e2d91d2a7a092b77807b9d218e9bae8ef2cb1562a12513fe8577c015900e9871@ec2-52-203-118-49.compute-1.amazonaws.com:5432/dfv2ku5nod2ui'
 db = SQLAlchemy(app)
 
@@ -151,8 +151,6 @@ def strength():
 			rating = int(request.form.get('rating'))
 			totalStrength = db.session.query(func.sum(Warrior.strength)).one()[0]
 			strengthmsg = modules.chooseMsg(rating, totalStrength)
-			print('dentro do if', totalStrength)
-
 
 	warriors = Warrior.query.limit(5).all()
 	stopadd = db.session.query(Warrior).count()
@@ -160,7 +158,6 @@ def strength():
 	# if team complete, calculate total strength
 	if stopadd == 5:
 		totalStrength = db.session.query(func.sum(Warrior.strength)).one()[0]
-		print(totalStrength)
 
 	return render_template("pages/strength.html",
 	warriorslist = warriorslist,
