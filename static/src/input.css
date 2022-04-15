@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+
+.active {
+    @apply text-texttertiary;
+  }
+
+@tailwind utilities;
+

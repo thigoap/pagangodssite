@@ -1,0 +1,43 @@
+<!doctype html>
+<title>{% block title %}Pagan Gods{% endblock %}</title>
+<link rel="stylesheet" href="{{url_for('static',filename='dist/output.css')}}">
+<script type="text/javascript" src="{{url_for('static',filename='js/main.js')}}"></script>
+
+<body class="bg-bg-pattern text-sm text-center text-textprimary
+bg-no-repeat bg-cover
+">
+    <div class="sm:flex">
+        <nav class="bg-bgprimary flex flex-col items-center
+        pb-2
+        sm:text-left sm:min-h-screen sm:w-56">
+            <div class="">
+                <a href="{{ url_for('index') }}">
+                <img class="mt-2 h-16" src="../static/images/pglogo.svg" alt="pagan gods logo"></a>
+            </div>
+            <div class="">
+                <p class="mt-2">COMBAT</p>
+                <ul class="text-textsecondary sm:ml-2">
+                    {{ nav.navbar1.render() }}
+                </ul>
+                <p class="mt-4">MINING</p>
+                <ul class="text-textsecondary sm:ml-2">
+                    {{ nav.navbar2.render() }}
+                </ul>
+                <p class="mt-4">OFFICIAL LINKS</p>
+                <ul class="text-textsecondary sm:ml-2">
+                    {{ nav.navbar3.render() }}
+                </ul>
+            </div>
+
+        </nav>
+
+        <main class="p-2 w-full h-full">
+            {% block content %}{% endblock %}
+        </main> 
+    </div>
+</body>
+<script>
+    if ( window.history.replaceState ) {
+        window.history.replaceState( null, null, window.location.href );
+    }
+</script>

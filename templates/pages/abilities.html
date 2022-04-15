@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="xl:flex">
+
+    <div>
+        {% for i in range(7) %}
+
+        <div class="flex">
+            <div class="w-24 h-24 aspect-square flex flex-col justify-center bg-slate-800 border-2 rounded-md my-1 border-textsecondary">
+                <div class="flex justify-center">
+                    <img class="h-16" src="./static/images/skills/{{abilities[i].slug}}.png" alt="skill {{abilities[i].slug}}">
+                </div>
+                <p>{{ abilities[i].name }}</p>
+            </div>
+            <div class="flex self-center ml-2 text-left">
+                {{ abilities[i].description }}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="bg-slate-800 border-2 rounded-md p-2 border-textsecondary lg:w-3/5 xl:w-1/5 mx-auto self-center">
+        <p>Abilities can be changed in Abilities Roll.</p>
+        <p>There is a cost, depending on the rarity of your card, and after each roll the cost increases by 3%:</p>
+        <br>
+            <p>Ordinary: 30 fur</p>
+            <p>Unusual: 400 fur</p>
+            <p>Rare: 3000 fur</p>
+            <p>Epic: 1000 fur</p>
+            <p>Legendary: 2000 fur</p>
+        </p>
+    </div>
+
+</div>
+{% endblock %}
+

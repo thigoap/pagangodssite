@@ -1,0 +1,15 @@
+{
+  "name": "pagansite",
+  "version": "0.1.0",
+  "description": "Site with info of the NFT game Pagan Gods.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "buildcss": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
+  },
+  "author": "thigoap",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.0.23"
+  }
+}

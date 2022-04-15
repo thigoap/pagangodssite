@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="flex flex-col items-center">
+    <div class="flex">
+        <a href="/cequips/armors"><button id="armors" name="armors"
+        name="addForm"
+        class="w-24 flex justify-center bg-slate-800 border-2 rounded-md py-1 m-1 border-textsecondary">
+        Armors</button></a>
+        <a href="/cequips/weapons"><button id="weapons" name="weapons"
+        class="w-24 flex justify-center bg-slate-800 border-2 rounded-md py-1  m-1 border-textsecondary">
+        Weapons</button></a>
+    </div>
+</div>
+
+<div class="sm:w-4/5 mx-auto">
+    {% for equip in equipsList %}
+
+        {% if loop.index0 == 0 %}    
+        <div class="grid grid-cols-00 gap-x-2 gap-y-0.5 sm:gap-x-4">
+        {% endif %}
+        {% if loop.index0 > 0 and loop.previtem[2] != equip[2]  %}
+        </div>
+        <div class="grid grid-cols-00 gap-x-2 gap-y-0.5- sm:gap-x-4 mt-1">
+        {% endif %}
+
+        <div class="p-2 border-2 rounded-md my-1 border-textsecondary">
+            <div class="flex justify-center">
+                <img class="h-48" src="../static/images/equips/{{equip[3]}}.png" alt="equip {{equip[0]}}">
+            </div>
+            <p>{{ equip[0] }}</p>
+            {% if typeOfEquip == 'armors' %}
+            <p>+Health: {{ equip[1] }}%</p>
+            {% elif typeOfEquip == 'weapons' %}   
+            <p>+Attack: {{ equip[1] }}%</p>
+            {% endif %}
+        </div>
+
+    {% endfor %}
+
+</div>
+
+
+
+{% endblock %}
