@@ -19,20 +19,21 @@
         {% if loop.index0 == 0 %}    
         <div class="grid grid-cols-00 gap-x-2 gap-y-0.5 sm:gap-x-4">
         {% endif %}
-        {% if loop.index0 > 0 and loop.previtem[2] != equip[2]  %}
+        {% if loop.index0 > 0 and loop.previtem[3] != equip[3]  %}
         </div>
         <div class="grid grid-cols-00 gap-x-2 gap-y-0.5- sm:gap-x-4 mt-1">
         {% endif %}
 
         <div class="p-2 border-2 rounded-md my-1 border-textsecondary">
             <div class="flex justify-center">
-                <img class="h-48" src="../static/images/equips/{{equip[3]}}.png" alt="equip {{equip[0]}}">
+                <!-- <img class="h-48" src="../static/images/equips/{{equip[3]}}.png" alt="equip {{equip[0]}}"> -->
+                <img class="h-48" src="../static/images/equips/{{equip[4]}}.png" alt="equip {{equip[1]}}">
             </div>
-            <p>{{ equip[0] }}</p>
+            <p>{{ equip[1] }}</p>
             {% if typeOfEquip == 'armors' %}
-            <p>+Health: {{ equip[1] }}%</p>
+            <p>+Health: {{ equip[2] }}%</p>
             {% elif typeOfEquip == 'weapons' %}   
-            <p>+Attack: {{ equip[1] }}%</p>
+            <p>+Attack: {{ equip[2] }}%</p>
             {% endif %}
         </div>
 
