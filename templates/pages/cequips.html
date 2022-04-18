@@ -13,6 +13,13 @@
     </div>
 </div>
 
+<div class="bg-slate-800 border-2 rounded-md p-2 mb-2 border-textsecondary lg:w-3/5 mx-auto self-center">
+    <p>Equipment must be equipped and repaired every 100 uses.</p>
+    <p>The table below shows the costs to equip and repair the equipments.</p>
+        {% include 'tableequips.html' %}
+    </p>
+</div>
+
 <div class="sm:w-4/5 mx-auto">
     {% for equip in equipsList %}
 
@@ -26,7 +33,6 @@
 
         <div class="p-2 border-2 rounded-md my-1 border-textsecondary">
             <div class="flex justify-center">
-                <!-- <img class="h-48" src="../static/images/equips/{{equip[3]}}.png" alt="equip {{equip[0]}}"> -->
                 <img class="h-48" src="../static/images/equips/{{equip[4]}}.png" alt="equip {{equip[1]}}">
             </div>
             <p>{{ equip[1] }}</p>

@@ -3,6 +3,10 @@ module.exports = {
             '../templates/pages/*.html'
           ],
   theme: {
+    fontFamily: {
+      sansserif: ['Anek Tamil', 'sans-serif'],
+      serif: ['Barlow', 'serif'],
+    },
     extend: {
       colors: {
         bgprimary: '#001426',
@@ -20,7 +24,6 @@ module.exports = {
       backgroundImage: {
         'bg-pattern': "url('/static/images/background.jpg')"
       }
-
     },
   },
   plugins: [],

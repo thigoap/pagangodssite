@@ -12,7 +12,7 @@ navbar1 = Navbar('',
 )
 navbar2 = Navbar('',
     View('Mining Units', 'munits'),
-    View('Mining Tools', 'mtools')
+    View('Mining Tools', 'mtools', tool = 'axe')
 )
 
 navbar3 = Navbar('',
