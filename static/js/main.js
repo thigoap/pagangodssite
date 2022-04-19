@@ -23,3 +23,19 @@ function checkAddBtn() {
         btn.disabled = true       
     }
 }
+
+function checkCalculateBtn() {
+    let selector01 = document.getElementById("warrior")
+    let selector02 = document.getElementById("ilevel")
+    let selector03 = document.getElementById("flevel")
+    let btn = document.getElementById("calculateBtn")
+
+    if (selector01.value != "Choose warrior" && 
+        selector02.value != "Choose initial level" && 
+        selector03.value != "Choose final level") {
+        btn.disabled = false
+    }
+    else {
+        btn.disabled = true       
+    }
+}

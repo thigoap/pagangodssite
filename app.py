@@ -70,7 +70,44 @@ def abilities():
 	
 @app.route("/fur", methods=['GET', 'POST'])
 def fur():
-	return render_template("pages/fur.html")	
+	warriorslist = db.session.query(allwarriors.c.warrior).all()
+	warriorslist = [warriors[0] for warriors in warriorslist]
+	if request.method == 'POST':
+		warrior = request.form.get('warrior')
+		ilevel = request.form.get('ilevel')
+		flevel = request.form.get('flevel')
+		fur = db.session\
+		.query(db.func.sum(warriorsdb.c.fur))\
+		.filter(warriorsdb.c.warrior == warrior, warriorsdb.c.lvl > int(ilevel), warriorsdb.c.lvl <= int(flevel)).all()
+		fur = fur[0][0]	
+		exp = db.session\
+		.query(db.func.sum(warriorsdb.c.xp))\
+		.filter(warriorsdb.c.warrior == warrior, warriorsdb.c.lvl > int(ilevel), warriorsdb.c.lvl <= int(flevel)).all()
+		exp = exp[0][0]	
+		runes = db.session\
+		.query(db.func.sum(warriorsdb.c.runes))\
+		.filter(warriorsdb.c.warrior == warrior, warriorsdb.c.lvl > int(ilevel), warriorsdb.c.lvl <= int(flevel)).all()
+		runes = runes[0][0]	
+		expensesdict = {
+			'warrior': warrior,
+			'ilevel': ilevel,
+			'flevel': flevel,
+			'fur': fur,
+			'exp': exp,
+			'runes': runes,
+			'wood': 1000 * runes,
+			'iron': 1000 * runes
+		}	
+		return render_template("pages/fur.html",
+		warriorslist = warriorslist, expensesdict=expensesdict)
+	return render_template("pages/fur.html",
+	warriorslist = warriorslist)
+
+@app.route("/flevel")
+def flevel():
+	ilevel = int(request.args.get('ilevel'))
+	maxlevel = maxlevelto
+	return render_template('flevel.html', ilevel=ilevel, maxlevel=maxlevel)		
 
 counter = 0
 warriorsteam = []
@@ -199,6 +236,8 @@ def delete(id):
 def level():
 	warrior = request.args.get('warrior')
 	maxlevel = db.session.query(allwarriors.c.maxlevel).filter(allwarriors.c.warrior == warrior).first()[0]
+	global maxlevelto
+	maxlevelto = maxlevel
 	return render_template('level.html', maxlevel=maxlevel)		
 
 @app.route("/levels01")

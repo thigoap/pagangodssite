@@ -3,70 +3,52 @@
     <thead class="text-xs text-gray-700 uppercase bg-gray-50 bg-gray-700 text-gray-400">
     <tr>
         <th scope="col" class="p-1">
-        Equipment Rarity
+        Resource
         </th>
         <th scope="col" class="p-1">
-        Cost to Equip
-        </th>
-        <th scope="col" class="p-1">
-        Cost to Repair
+        Quantity
         </th>
     </tr>
     </thead>
      <tbody>
         <tr class="bg-white border-b bg-gray-800 border-gray-700">
         <th scope="row" class="p-1 font-medium text-gray-900 dark:text-white whitespace-nowrap">
-        Ordinary
+        Fur
         </th>
         <td class="p-1">
-        500 fur
-        </td>
-        <td class="p-1">
-        3 fur + 60 wood + 60 iron
+        {{ expensesdict.fur }}
         </td>
     </tr>
     <tr class="bg-white border-b bg-gray-800 border-gray-700">
         <th scope="row" class="p-1 font-medium text-gray-900 dark:text-white whitespace-nowrap">
-        Unusual
+        Exp
         </th>
         <td class="p-1">
-        2000 fur
-        </td>
-        <td class="p-1">
-        15 fur + 300 wood + 300 iron
+        {{ expensesdict.exp }}
         </td>
     </tr>
     <tr class="bg-white border-b bg-gray-800 border-gray-700">
         <th scope="row" class="p-1 font-medium text-gray-900 dark:text-white whitespace-nowrap">
-        Rare
+        Runes of Wisdom
         </th>
         <td class="p-1">
-        7000 fur
-        </td>
-        <td class="p-1">
-        30 fur + 1200 wood + 1200 iron
+        {{ expensesdict.runes }}
         </td>
     </tr>
     <tr class="bg-white border-b bg-gray-800 border-gray-700">
         <th scope="row" class="p-1 font-medium text-gray-900 dark:text-white whitespace-nowrap">
-        Epic
+        Wood
         </th>
         <td class="p-1">
-        10000 fur
-        </td>
-        <td class="p-1">
-        60 fur 2700 wood + 2700 iron
+        {{ expensesdict.wood }}
         </td>
     </tr>
     <tr class="bg-white border-b bg-gray-800 border-gray-700">
         <th scope="row" class="p-1 font-medium text-gray-900 dark:text-white whitespace-nowrap">
-        Legendary
+        Iron
         </th>
         <td class="p-1">
-        20000 fur
-        </td>
-        <td class="p-1">
-        150 fur + 4500 wood + 4500 iron
+        {{ expensesdict.iron }}
         </td>
     </tr>
     </tbody>
