@@ -33,7 +33,61 @@ abilities = [
         'name': 'Witch Doctor',
         'description': "Fills his allies with hope and instantly restores 10% of health to all friendly heroes.",
         'slug': 'skill-witch_doctor'
-    }
+    },
+        {
+        'name': 'Dodge',
+        'description': "Character's combat prowess allows him to dodge 30% of incoming attacks.",
+        'slug': 'skill-dodge'
+    },
+        {
+        'name': "The Ancestor's Protection",
+        'description': "Your character goes into a defensive formation and takes reduced damage (by 40%) for 2 turns.",
+        'slug': 'skill-ancestors_protection'
+    },
+        {
+        'name': 'Shoulder to Shoulder',
+        'description': "While attacking, your hero increases its harm for additional 50% of the total damage of his race. This ability deals damage to all enemy targets (i.e. it's ultimately scalable).",
+        'slug': 'skill-shoulder_to_shoulder'
+    },
+        {
+        'name': 'Shield',
+        'description': "Character's lust for battle becomes so strong that he's unable to die for 1 turn (no matter how wounded he becomes).",
+        'slug': 'skill-shield'
+    },
+]
+
+buildings = [
+    {
+        'rarity': 'Ordinary',
+        'boost': '5 - 30%',
+        'condition': '100 - 2500',
+        'slug': 'house-of-voivode-ordinary'
+    },
+    {
+        'rarity': 'Unusual',
+        'boost': '10 - 35%',
+        'condition': '300 - 2800',
+        'slug': 'house-of-voivode-unusual'
+    },
+    {
+        'rarity': 'Rare',
+        'boost': '15 - 40%',
+        'condition': '900 - 3400',
+        'slug': 'house-of-voivode-rare'
+    },
+    {
+        'rarity': 'Epic',
+        'boost': '25 - 50%',
+        'condition': '2700 - 5200',
+        'slug': 'house-of-voivode-epic'
+    },
+    {
+        'rarity': 'Legendary',
+        'boost': '50 - 75%',
+        'condition': '8100 - 10600',
+        'slug': 'house-of-voivode-legendary'
+    },
+    
 ]
 
 warriorordinary = [

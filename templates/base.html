@@ -1,11 +1,12 @@
 <!doctype html>
 <title>{% block title %}Pagan Gods{% endblock %}</title>
 <link rel="stylesheet" href="{{url_for('static',filename='dist/output.css')}}">
+<link rel="icon" type="image/x-icon" href="{{url_for('static',filename='images/pgico.png')}}">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script type="text/javascript" src="{{url_for('static',filename='js/main.js')}}"></script>
 
 <body class="bg-bg-pattern text-sm text-center text-textprimary font-sansserif
-bg-no-repeat bg-cover
+bg-no-repeat bg-cover min-h-screen
 ">
     <div class="md:flex">
         <nav class="bg-bgprimary flex flex-col items-center

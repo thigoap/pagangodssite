@@ -12,7 +12,8 @@ navbar1 = Navbar('',
 )
 navbar2 = Navbar('',
     View('Mining Units', 'munits'),
-    View('Mining Tools', 'mtools', tool = 'axe')
+    View('Mining Tools', 'mtools', tool = 'axe'),
+    View('House of Voivode', 'buildings')    
 )
 
 navbar3 = Navbar('',

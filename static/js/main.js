@@ -31,8 +31,7 @@ function checkCalculateBtn() {
     let btn = document.getElementById("calculateBtn")
 
     if (selector01.value != "Choose warrior" && 
-        selector02.value != "Choose initial level" && 
-        selector03.value != "Choose final level") {
+        selector02.value != "Choose initial level") {
         btn.disabled = false
     }
     else {

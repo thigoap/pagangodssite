@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="sm:w-4/5 mx-auto">
+
+    <div class="bg-slate-800 border-2 rounded-md p-2 mb-2 border-textsecondary lg:w-3/5 mx-auto self-center">
+        <p>Number of House levels - 25</p>
+        <p>Upgrade to each new level gives +1% to Boost and +100 points to Condition and requires 23000 Fur and per 400000 Wood and Iron.</p>
+        <p><span class="font-semibold">Boost</span>: Adds the appropriate % to all stats of Combat units in PvE, PvP and events.</p>
+        <p><span class="font-semibold">Condition</span>: Equivalent of Health (HP) for Houses. It is its level that directly affects the amount of FUR received as toll.</p>
+    </div>
+
+
+    <div class="grid grid-cols-01 gap-2">
+        {% for i in range(5) %}
+        <div class="p-2 border-2 rounded-md my-1 border-textsecondary">
+            <div class="flex justify-center">
+                <img class="h-48" src="../static/images/buildings/{{buildings[i].slug}}.png" alt="{{buildings[i].slub}}">
+            </div>
+            <p>Rarity: {{ buildings[i].rarity }}</p>
+            <p>Boost: {{ buildings[i].boost }}</p>
+            <p>Condition: {{ buildings[i].condition }}</p>
+        </div>
+        {% endfor %}
+    </div>
+
+</div>
+{% endblock %}

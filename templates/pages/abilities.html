@@ -9,14 +9,14 @@
 </div>
 
 <div>
-    {% for i in range(7) %}
+    {% for i in range(11) %}
 
     <div class="flex">
         <div class="w-24 h-24 aspect-square flex flex-col justify-center bg-slate-800 border-2 rounded-md my-1 border-textsecondary">
             <div class="flex justify-center">
                 <img class="h-16" src="./static/images/skills/{{abilities[i].slug}}.png" alt="skill {{abilities[i].slug}}">
             </div>
-            <p>{{ abilities[i].name }}</p>
+            <p class="text-xs pt-1">{{ abilities[i].name }}</p>
         </div>
         <div class="flex self-center ml-2 text-left">
             {{ abilities[i].description }}

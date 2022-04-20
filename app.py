@@ -266,7 +266,10 @@ def mtools(tool):
 	# 	tollsList = db.session.query(alltools).all()
 	return render_template("pages/mtools.html", tool=tool)	
 
-
+@app.route("/buildings")
+def buildings():
+	return render_template("pages/buildings.html",
+	buildings=datab.buildings)
 
 
 if __name__ == '__main__':
