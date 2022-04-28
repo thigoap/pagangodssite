@@ -1,3 +1,31 @@
+const getUSDValue = () => fetch(`https://api.coingecko.com/api/v3/simple/price?ids=Pagan-Gods-FUR-Token&vs_currencies=usd`)
+  .then(res => res.json())
+const getBRLValue = () => fetch(`https://api.coingecko.com/api/v3/simple/price?ids=Pagan-Gods-FUR-Token&vs_currencies=brl`)
+  .then(res => res.json())
+
+
+function start(){
+    getAsync();
+}
+
+const getAsync = async () => {
+    let usdValue = await getUSDValue()
+    usd = document.getElementById('usdValue')
+    usd.innerHTML = 'US$ ' + (usdValue['pagan-gods-fur-token']['usd']).toLocaleString(
+        undefined, // leave undefined to use the visitor's browser 
+                   // locale or a string like 'en-US' to override it.
+        { minimumFractionDigits: 5 }
+      );
+
+    let brlValue = await getBRLValue()
+    brl = document.getElementById('brlValue')
+    brl.innerHTML = 'R$ ' + (brlValue['pagan-gods-fur-token']['brl']).toLocaleString(
+        undefined, // leave undefined to use the visitor's browser 
+                   // locale or a string like 'en-US' to override it.
+        { minimumFractionDigits: 5 }
+      );
+}
+
 function checkCompareBtn() {
     let selector01 = document.getElementById("warrior01")
     let selector02 = document.getElementById("warrior02")

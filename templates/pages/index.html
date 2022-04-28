@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="md:w-full md:px-2 lg:w-4/5 mx-auto">
+<div class="md:px-2 lg:w-4/5 mx-auto">
 
     <div class="grid gap-4 md:grid-cols-2">
 
@@ -9,6 +9,7 @@
             <p class="text-lg">Pagan Gods is a Match3 style NFT game.</p>
         </div>
         <div class="md:self-center">
+            <p>Disclaimer: this is not an official site.</p>
             <p>To play the game, you need 5 NFTs for combat. They can be of four races: Animal, Human, Magical Creature, or Undead.</p>
             <p>In PvE mode, to perform the attacks, you must match the stones that have the colors of your chosen race, or the ones that you have the most cards. A good strategy is to have an entire team of one race.</p>
         </div>
@@ -16,8 +17,8 @@
             <img class="w-64" src="./static/images/pggame.png" alt="pg game">
         </div>
         <div>
-            <p>There are more elements in the gameplay besides the combination of stones. The first of them are the <a class="font-bold text-texttertiary" href="{{url_for('abilities')}}">abilities</a>. Each card can have one ability that is activated in specific turns of the match.</p>
-            <p>The other are the <a class="font-bold text-texttertiary" href="{{url_for('cequips', typeOfEquip='armors')}}">equipments</a>: armors and weapons. You can equipe your warriors with armors, that increase their health, and with weapons that increase their attack power. These equipments can be crafted using resources or purchased from the market with FUR.</p>
+            <p>There are more elements in the gameplay besides the combination of stones. The first of them is the <a class="font-bold text-texttertiary" href="{{url_for('abilities')}}">abilities</a>. Each card can have one ability that is activated in specific turns of the match.</p>
+            <p>The other is the <a class="font-bold text-texttertiary" href="{{url_for('cequips', typeOfEquip='armors')}}">equipments</a>: armors and weapons. You can equipe your warriors with armors, that increase their health, and with weapons that increase their attack power. These equipments can be crafted using resources or purchased from the market with FUR.</p>
             <br>
             <p>FUR is the primary token of the game. You earn FUR in the PvE Mode with <a class="font-bold text-texttertiary" href="{{url_for('cunits')}}">Combat Units</a>.</p>
             <p>Resources need to be collected with <a class="font-bold text-texttertiary" href="{{url_for('munits')}}">Mining Units</a>.</p>
