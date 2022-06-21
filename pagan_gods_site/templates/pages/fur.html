@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<p class="font-semibold text-lg">Calculate all the resources needed to upgrade Combat Units</p>
+
+<form action=""  name="calculateForm" method="post">
+    <div class="pt-4 mb-2">
+        <select 
+        class="w-40 bg-slate-800 rounded border-2 border-textsecondary p-1 mr-2" 
+        name="warrior" id="warrior"
+        hx-trigger="change" hx-get="/level" hx-target="#ilevel"
+        onchange="checkCalculateBtn()">
+            <option selected>Choose warrior</option>
+            {% for warrior in warriors_list %}
+            <option value='{{ warrior }}'>{{ warrior }}</option>
+            {% endfor %}
+        </select>
+        <div class="py-2">
+            <select class="w-40 bg-slate-800 rounded border-2 border-textsecondary p-1"
+            name="ilevel" id="ilevel"
+            hx-trigger="change" hx-get="/flevel" hx-target="#flevel"
+            onchange="checkCalculateBtn()">
+                <option selected>Choose initial level</option>
+            </select>
+            <select class="w-40 bg-slate-800 rounded border-2 border-textsecondary p-1"
+            name="flevel" id="flevel"
+            onchange="checkCalculateBtn()">
+                <option selected>Choose final level</option>
+            </select>
+        </div>
+    </div>            
+
+    <button id="calculateBtn" type="submit" name="calculateForm"
+            class="py-2 px-6 mb-4 font-bold text-slate-900 rounded-md
+            bg-gradient-to-r from-btn01 to-btn02"
+            disabled>
+        CALCULATE
+    </button>
+</form>
+
+
+{% if expenses_dict %}
+<p>Costs to upgrade {{ expenses_dict.warrior }} from level {{ expenses_dict.i_level }} to {{ expenses_dict.f_level }}</p>
+<div class="bg-slate-800 border-2 rounded-md p-2 mb-2 border-textsecondary w-80 mx-auto self-center">
+    {% include 'tablefur.html' %}
+</div>
+{% endif %}
+
+<script src="https://unpkg.com/htmx.org@1.7.0" integrity="sha384-EzBXYPt0/T6gxNp0nuPtLkmRpmDBbjg6WmCUZRLXBBwYYmwAUxzlSGej0ARHX0Bo" crossorigin="anonymous" defer></script>
+{% endblock %}

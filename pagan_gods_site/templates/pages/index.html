@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="md:px-2 lg:w-4/5 mx-auto">
+
+    <div class="grid gap-4 md:grid-cols-2">
+
+        <div class="md:col-span-2">
+            <p class="text-lg">Pagan Gods is a Match3 style NFT game.</p>
+        </div>
+        <div class="md:self-center">
+            <p>Disclaimer: this is not an official site.</p>
+            <p>To play the game, you need 5 NFTs for combat. They can be of four races: Animal, Human, Magical Creature, or Undead.</p>
+            <p>In PvE mode, to perform the attacks, you must match the stones that have the colors of your chosen race, or the ones that you have the most cards. A good strategy is to have an entire team of one race.</p>
+        </div>
+        <div class="flex justify-center md:row-span-2">
+            <img class="w-64" src="./static/images/pggame.png" alt="pg game">
+        </div>
+        <div>
+            <p>There are more elements in the gameplay besides the combination of stones. The first of them is the <a class="font-bold text-texttertiary" href="{{url_for('site.abilities')}}">abilities</a>. Each card can have one ability that is activated in specific turns of the match.</p>
+            <p>The other is the <a class="font-bold text-texttertiary" href="{{url_for('site.c_equips', type_of_equip='armors')}}">equipments</a>: armors and weapons. You can equipe your warriors with armors, that increase their health, and with weapons that increase their attack power. These equipments can be crafted using resources or purchased from the market with FUR.</p>
+            <br>
+            <p>FUR is the primary token of the game. You earn FUR in the PvE Mode with <a class="font-bold text-texttertiary" href="{{url_for('site.c_units')}}">Combat Units</a>.</p>
+            <p>Resources need to be collected with <a class="font-bold text-texttertiary" href="{{url_for('site.m_units')}}">Mining Units</a>.</p>
+        </div>
+        <div class="md:col-start-1 md:col-span-2">
+            <p>FUR Contract Address: 0x3d81473920De7F4eEf8ec71E0121BAEA7Fc5b6CA</p>
+            <p>Wood Contract Address: 0x31F77b50D0129B6c95Ad4bBbF9dB56023e531640</p>
+            <p>Iron Contract Address: 0x08C9903C088f574E11fA3F68beAEbBa785f2f911</p>
+        </div>
+
+    </div>
+
+</div>
+{% endblock %}

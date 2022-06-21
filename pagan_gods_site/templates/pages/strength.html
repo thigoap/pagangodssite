@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div>
+    <p class="font-semibold text-lg">Compare warriors</p>
+
+    <form action="" method="post">
+
+        <div class="pt-4 pb-2">
+            <select 
+            class="w-40 bg-slate-800 rounded border-2 border-textsecondary p-1 mr-2" 
+            name="warrior01" id="warrior01"
+            hx-trigger="change" hx-get="/levels01" hx-target="#level01"
+            onchange="checkCompareBtn()">
+                <option selected>Choose warrior</option>
+                {% for warrior in warriors_list %}
+                <option value='{{ warrior }}'>{{ warrior }}</option>
+                {% endfor %}
+            </select>
+
+            <select
+            class="w-40 bg-slate-800 rounded border-2 border-textsecondary p-1 ml-2"
+            name="warrior02" id="warrior02"
+            hx-trigger="change" hx-get="/levels02" hx-target="#level02"
+            onchange="checkCompareBtn()">
+                <option selected>Choose warrior</option>
+                {% for warrior in warriors_list %}
+                <option value='{{ warrior }}'>{{ warrior }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="pb-4">
+            <select class="w-40 bg-slate-800 rounded border-2 border-textsecondary p-1 mr-2"
+            name="level01" id="level01">
+                <option selected>Choose level</option>
+            </select>
+
+            <select class="w-40 bg-slate-800 rounded border-2 border-textsecondary p-1 ml-2"
+            name="level02" id="level02">
+                <option selected>Choose level</option>
+            </select>
+        </div>
+
+        <button id="compareBtn" type="submit" name="compareForm"
+                class="py-2 px-6 mb-4 font-bold text-slate-900 rounded-md
+                bg-gradient-to-r from-btn01 to-btn02"
+                disabled>
+            COMPARE
+        </button>
+
+    </form>
+
+    <div class="flex justify-center">
+        {% if warriors_dict %}
+        <div class="mx-4 p-2 border-2 rounded-md my-1 border-sky-800">
+            <div class="flex justify-center">
+                <img class="h-48" src="./static/images/warriors/{{ warriors_dict.slug_01 }}.png" alt="warrior {{ warriors_dict.warrior_01 }}">
+            </div>
+            <p class="font-semibold text-base">{{ warriors_dict.warrior_01 }}</p>
+            <p>Level: {{ warriors_dict.level_01 }}</p>
+            <p>Health: {{ warriors_dict.health_01 }}</p>
+            <p>Attack: {{ warriors_dict.attack_01 }}</p>
+            <p>Strength: {{ warriors_dict.strength_01 }}</p>     
+        </div>
+        {% endif %}
+
+        {% if warriors_dict %}
+        <div class="mx-4 p-2 border-2 rounded-md my-1 border-sky-800">
+            <div class="flex justify-center">
+                <img class="h-48" src="./static/images/warriors/{{ warriors_dict.slug_02 }}.png" alt="warrior {{ warriors_dict.warrior_02 }}">
+            </div>
+            <p class="font-semibold text-base">{{ warriors_dict.warrior_02 }}</p>
+            <p>Level: {{ warriors_dict.level_02 }}</p>
+            <p>Health: {{ warriors_dict.health_02 }}</p>
+            <p>Attack: {{ warriors_dict.attack_02 }}</p>
+            <p>Strength: {{ warriors_dict.strength_02 }}</p>     
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+<script src="https://unpkg.com/htmx.org@1.7.0" integrity="sha384-EzBXYPt0/T6gxNp0nuPtLkmRpmDBbjg6WmCUZRLXBBwYYmwAUxzlSGej0ARHX0Bo" crossorigin="anonymous" defer></script>
+{% endblock %}

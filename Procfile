@@ -1,1 +1,1 @@
-web: gunicorn pagansite.wsgi:app
+web: gunicorn pagan_gods_site.wsgi:app
